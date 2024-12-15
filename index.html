@@ -15,10 +15,25 @@
     <link rel="stylesheet" href="https://cdn.prestonkwei.com/basecode/basecss.css" />
   </head>
   <body class="min-w-screen min-h-screen bg-slate-800 p-5">
-    <div class="w-screen h-screen fixed top-0 left-0"></div>
+    <div class="w-screen h-screen fixed flex justify-center items-center top-0 left-0 bg-[rgb(0,0,0,.5)]" id="bouncer-wrap"><div class="loader"></div></div>
     <p class="text-3xl underline decoration-2 underline-offset-2 font-bold text-white">Hold up! Are you human?</p>
-    <p class="text-white mt-1">We need to verify you're human. Once this is done, you will be redirected!</p>
-    <div class="g-recaptcha mt-3" data-sitekey="6LdAhZwqAAAAABtXPgxUt-aYKJJU8G37DauhHSW-" data-callback="captchaSucess"></div>
+    <p class="text-white mt-1">Our servers can’t determine if you’re a robot. We need to verify you’re human. Once verified, you’ll be redirected.</p>
+    <div id="challenge-wrapbox">
+      <div class="g-recaptcha mt-3" data-sitekey="6LdAhZwqAAAAABtXPgxUt-aYKJJU8G37DauhHSW-" data-callback="captchaSucess"></div>
+    </div>
+    <div id="info-pastchallenge" class="text-sm text-white mt-5">
+      <button class="border-2 border-white rounded-full px-3 py-2 hover:bg-white hover:text-black ease-in-out transition-all" id="more">More Info</button>
+      <div id="info-more" class="mt-5 hidden flex flex-col gap-5">
+        <div>
+          <p class="font-bold">Why was I sent here?</p>
+          <p>You were sent here because you were trying to access one of our sites, and our servers couldn’t determine if you are a robot. This page checks to see if you are a human.</p>
+        </div>
+        <div>
+          <p class="font-bold">How can I prevent this in the future?</p>
+          <p>Disabling VPN’s,</p>
+        </div>
+      </div>
+    </div>
     <div class="fixed bottom-0 left-0 w-screen flex text-xs text-white justify-between pb-2 px-5">
       <div>
         <p><span class="font-bold">Client ID:</span> <span id="clientid-fill"></span></p>
