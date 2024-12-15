@@ -1,4 +1,4 @@
-if (window.location.href.contains('.com')) {
+if (window.location.href.includes('.com')) {
   console.log = function () {}
 }
 
@@ -26,4 +26,5 @@ grecaptcha.ready(() => {
 })
 function captchaSucess() {
   console.log('captchacomplete')
+  document.querySelector('#bouncer-wrap').style.display = 'flex'
 }
